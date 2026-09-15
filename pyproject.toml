@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forgetrace"
+version = "0.2.0"
+description = "Repository-aware coding agent with code indexing, controlled tools, memory, and recovery"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+forgetrace = "pico.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5",
+  "ruff>=0.4.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["pico*", "forgetrace*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
